@@ -1,5 +1,8 @@
-local http_request or syn and syn.request or request;
-local listofid = loading(game:HttpGet(""))()
-
-local body = http_request({Url = 'https://httpbin.org/get'; Method = 'GET'}).Body;
-local decoded = game:GetService("HttpService"):JSONDecode(body);
+local HWIDTable = loadstring(game:HttpGet("https://raw.githubusercontent.com/PQerror/whitelist/main/clientids"))() -- hwids
+local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
+for i,v in pairs(HWIDTable)
+    if v == HWID then
+  print("Whitelisted! Enjoy Gilbertware Private!")
+else
+  game.Players.LocalPlayer:Kick("not wled")
+end
