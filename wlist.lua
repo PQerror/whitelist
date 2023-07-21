@@ -1,8 +1,11 @@
 local HWIDTable = loadstring(game:HttpGet("https://raw.githubusercontent.com/PQerror/whitelist/main/clientids"))() -- hwids
+
 local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
-for i,v in pairs(HWIDTable)
+
+for i,v in pairs(HWIDTable) do
     if v == HWID then
-  print("Whitelisted! Enjoy Gilbertware Private!")
+    wait(0)
 else
   game.Players.LocalPlayer:Kick("not wled")
+end
 end
